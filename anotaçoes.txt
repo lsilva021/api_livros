@@ -1,0 +1,11 @@
+Toda API deve ter documentaçao.
+
+Sites de APIs:
+
+https://fakestoreapi.in/
+
+https://thecatapi.com/
+
+https://sampleapis.com/api-list
+
+a extensao .md significa markdown
