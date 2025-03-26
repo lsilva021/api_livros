@@ -9,3 +9,14 @@ https://thecatapi.com/
 https://sampleapis.com/api-list
 
 a extensao .md significa markdown
+
+
+Same Origin Policy - Regra que roda entre os navegadores. Esta regra diz que para puxar qualquer informação, elas devem estar no mesmo domínio. Então para integrar nossa API, o front e o back devem estar hospedados no mesmo domínio, ou então a API não vai ser consumida.
+
+Para que nossa API seja consumida em qualquer domínio, devemos habilitar o CORS.
+
+CORS - Cross Origin Reosurce Sharing (Compartilhamento de Recursos entre origens diferentes). Toda e qualquer linguagem de construção de API (back-end) lidaremos com CORS.
+
+gunicorn - Servidor que sustenta a API quando subimos no render
+
+o ambiente virtual não sobe pro github, e precisamos subir os arquivos que estão nele para consumirmos nossa API.
