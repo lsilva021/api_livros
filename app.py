@@ -5,12 +5,13 @@
 # o flask é a pasta e o Flask é o framework
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+# ERRO por nao conigurar o CORS. Faltou o código da linha 14 'CORS(app)'.
 
 import sqlite3
 
 # 2ª passo puxar o Flask e suas funcionalidades para a variável app
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/")
 
@@ -60,7 +61,7 @@ def doar():
     image_url = dados.get("image_url")
 
     if not titulo or not categoria or not autor or not image_url:
-        return jsonify({"erro":"Todos os campos sao obrigart´roios"}), 400
+        return jsonify({"erro":"Todos os campos sao obrigatórios"}), 400
 
     #toda vez que quisermos nos comunicar com o database devemos utilizar este comando with sqlite3.connect
     with sqlite3.connect("database.db") as conn:
@@ -70,9 +71,9 @@ def doar():
         VALUES ("{titulo}", "{categoria}", "{autor}", "{image_url}")
         """)
 
-    conn.commit() # Serve para salvar nossas alterções.
+        conn.commit() # Serve para salvar nossas alterções.
 
-    return jsonify({"mensagem": "Livro cadastrado com sucesso"}), 201
+        return jsonify({"mensagem": "Livro cadastrado com sucesso"}), 201
 
 
 @app.route("/livros", methods=["GET"])
